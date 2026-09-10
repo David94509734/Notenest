@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f1e9;
+    color: #29333a;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 230px;
+
+    border-right: 1px solid #d6d2c9;
+
+    padding: 28px 22px;
+
+    background: #f1eee6;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.brand {
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 65px;
+}
+
+
+.sidebar-title {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    margin-bottom: 15px;
+}
+
+
+.workshop ol {
+    padding-left: 20px;
+}
+
+
+.workshop li {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+
+    color: #454b4d;
+}
+
+
+.progress {
+    margin-top: 18px;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 70px;
+
+    border-bottom: 1px solid #d6d2c9;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 38px;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 850px;
+
+    margin: 48px auto 0;
+
+    padding: 0 45px;
+}
+
+
+.eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+    color: #777;
+}
+
+
+.hero h1 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(
+        48px,
+        6vw,
+        76px
+    );
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+
+    color: #34404a;
+}
+
+
+.hero p {
+    max-width: 540px;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #777;
+}
+
+
+/* =========================
+   NOTES
+========================= */
+
+.notes-section {
+    max-width: 850px;
+
+    margin: 70px auto;
+
+    padding: 0 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        300px;
+
+    gap: 45px;
+}
+
+
+.notes-section h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   NOTE CARD
+========================= */
+
+.note-card {
+    border: 1px solid #c9c5bc;
+
+    padding: 25px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.2
+    );
+}
+
+
+.note-card h2 {
+    margin-bottom: 20px;
+}
+
+
+.note-card input,
+.note-card textarea {
+    width: 100%;
+
+    border: none;
+
+    border-bottom: 1px solid #c8c4bb;
+
+    background: transparent;
+
+    padding: 12px 0;
+
+    margin-bottom: 15px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    color: #29333a;
+}
+
+
+.note-card textarea {
+    height: 120px;
+
+    resize: vertical;
+}
+
+
+.note-card input::placeholder,
+.note-card textarea::placeholder {
+    color: #999;
+}
+
+
+.note-card button {
+    border: 1px solid #29333a;
+
+    background: #29333a;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: 0.2s;
+}
+
+
+.note-card button:hover {
+    background: transparent;
+
+    color: #29333a;
+}
+
+
+/* =========================
+   SAVED NOTES
+========================= */
+
+.note {
+    border-top: 1px solid #d0ccc3;
+
+    padding: 18px 0;
+}
+
+
+.note h3 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+.note p {
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #62676a;
+
+    white-space: pre-wrap;
+}
+
+
+.note-date {
+    font-size: 9px;
+
+    color: #999;
+
+    margin-top: 8px;
+}
+
+
+.delete-note {
+    margin-top: 10px;
+
+    border: none;
+
+    background: none;
+
+    color: #8a4444;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+.empty-state {
+    color: #999;
+
+    font-size: 12px;
+
+    padding: 20px 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .hero {
+        margin-top: 35px;
+    }
+
+    .notes-section {
+        grid-template-columns: 1fr;
+
+        margin-top: 55px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+
+        border-right: none;
+
+        border-bottom: 1px solid #d6d2c9;
+
+        padding: 20px;
+    }
+
+    .brand {
+        margin-bottom: 25px;
+    }
+
+    .workshop ol {
+        display: none;
+    }
+
+    .progress {
+        margin-top: 0;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 0 25px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .notes-section {
+        padding: 0 25px;
+    }
+
+}

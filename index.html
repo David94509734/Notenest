@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f4f1e9"
+    >
+
+    <meta
+        name="description"
+        content="Offline Notes Lab - an offline-first notes application"
+    >
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Offline Notes Lab</title>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            Offline Notes Lab
+        </div>
+
+        <div class="workshop">
+
+            <p class="sidebar-title">
+                WORKSHOP MAP
+            </p>
+
+            <ol>
+                <li>Create the shell</li>
+                <li>Make it unstable</li>
+                <li>Make it offline</li>
+                <li>Test the boundary</li>
+                <li>Deploy it</li>
+            </ol>
+
+        </div>
+
+        <div class="progress">
+            90% complete
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div></div>
+
+            <div id="connectionStatus">
+                Offline
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="eyebrow">
+                FOUNDATION TRACK
+            </div>
+
+            <h1>
+                NAME: NWOLISA NKEMSINACHI UDOCHUKWU<br>
+                COURSE: COMPUTER ENGINEERING<br>
+                MATRIC NUMBER: 2025/2/103482CP.
+            </h1>
+
+            <p>
+                Save a note, refresh the page, then test the same
+                experience with the network turned off.
+            </p>
+
+        </section>
+
+
+        <!-- NOTES AREA -->
+        <section class="notes-section">
+
+            <div class="notes-list">
+
+                <h2>
+                    Notes from the lab
+                </h2>
+
+                <div id="notesContainer">
+
+                    <div class="empty-state">
+                        No notes yet.
+                        Write your first note →
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTE FORM -->
+            <div class="note-card">
+
+                <h2>
+                    Write a note
+                </h2>
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Title"
+                >
+
+                <textarea
+                    id="noteBody"
+                    placeholder="Write something..."
+                ></textarea>
+
+                <button id="saveNote">
+                    Save note
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="app.js"></script>
+
+<script>
+    // Register service worker
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+                .register("sw.js")
+                .then(() => {
+                    console.log("Service Worker registered");
+                })
+                .catch(error => {
+                    console.error(
+                        "Service Worker registration failed:",
+                        error
+                    );
+                });
+        });
+    }
+</script>
+
+</body>
+</html>
